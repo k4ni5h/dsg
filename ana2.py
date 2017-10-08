@@ -42,9 +42,9 @@ with open('mushroom.csv', 'r') as problem:
 			while((ep<pp and p[0]=='e') or (ep>pp and p[0]=='p')):
 				for i in range(24):
 					if((p[0]=='e' and e_p[i]>p_p[i]) or (p[0]=='p' and e_p[i]<p_p[i])):
-						a_p[i]*=1.01
+						a_p[i]*=1.001
 					elif((p[0]=='p' and e_p[i]>p_p[i]) or (p[0]=='e' and e_p[i]<p_p[i])):
-						a_p[i]*=.99
+						a_p[i]*=.999
 				ep=pp=0
 				for i in range(24):
 					if(e_p[i]+p_p[i]!=0):
