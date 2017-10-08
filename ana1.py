@@ -26,9 +26,9 @@ with open('mushroom.csv', 'r') as problem:
 						elif value[i+1]==p[i+1] and value[0]=='e':
 							e_p[i]+=1000
 						elif value[0]=='p':
-							p_p[i]+=1/(int(value[i+1])-int(p[i]))**2
+							p_p[i]+=1/(int(value[i+1])-int(p[i+1]))**2
 						elif value[0]=='e':
-							e_p[i]+=1/(int(value[i+1])-int(p[i]))**2
+							e_p[i]+=1/(int(value[i+1])-int(p[i+1]))**2
 					else:
 						if value[i+1]==p[i+1] and value[0]=='p':
 							p_p[i]+=1
@@ -56,3 +56,4 @@ with open('mushroom.csv', 'r') as problem:
 						ep+=e_p[i]*a_p[i]/(e_p[i]+p_p[i])
 						pp+=p_p[i]*a_p[i]/(e_p[i]+p_p[i])
 print(pa*100/(pa+fa),a_p)
+#98.36440379880408
