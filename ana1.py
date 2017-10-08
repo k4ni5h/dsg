@@ -1,10 +1,5 @@
 import csv
 import re
-def mul(numbers):
-	total = 1
-	for x in numbers:
-		total *= x  
-	return total  
 pattern = re.compile("\s*,\s*|\s+$")
 pa=0
 fa=0
@@ -56,4 +51,3 @@ with open('mushroom.csv', 'r') as problem:
 						ep+=e_p[i]*a_p[i]/(e_p[i]+p_p[i])
 						pp+=p_p[i]*a_p[i]/(e_p[i]+p_p[i])
 print(pa*100/(pa+fa),a_p)
-#98.36440379880408

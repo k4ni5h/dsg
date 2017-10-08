@@ -1,10 +1,5 @@
 import csv
 import re
-def mul(numbers):
-	total = 1
-	for x in numbers:
-		total *= x  
-	return total  
 pattern = re.compile("\s*,\s*|\s+$")
 pa=0
 fa=0
