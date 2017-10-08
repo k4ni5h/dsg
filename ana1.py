@@ -20,7 +20,7 @@ with open('mushroom.csv', 'r') as problem:
 			for string in spamreader:
 				value=[x for x in pattern.split(string[0]) if x]
 				for i in range(24):
-					if type(p[i]) == int:
+					if type(p[i+1]) == int:
 						if value[i+1]==p[i+1] and value[0]=='p':
 							p_p[i]+=1000
 						elif value[i+1]==p[i+1] and value[0]=='e':

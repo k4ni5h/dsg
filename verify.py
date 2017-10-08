@@ -1,5 +1,6 @@
 import csv
 import re
+import ast
 def mul(numbers):
 	total = 1
 	for x in numbers:
@@ -8,6 +9,7 @@ def mul(numbers):
 pattern = re.compile("\s*,\s*|\s+$")
 pa=0
 fa=0
+a_p=ast.literal_eval(input())
 with open('mushroom.csv', 'r') as problem:
 	spam = csv.reader(problem, delimiter=' ', quotechar='|')
 	for pro in spam:
@@ -36,12 +38,13 @@ with open('mushroom.csv', 'r') as problem:
 		ep=pp=0
 		for i in range(24):
 			if(e_p[i]+p_p[i]!=0):
-				ep+=e_p[i]/(e_p[i]+p_p[i])
-				pp+=p_p[i]/(e_p[i]+p_p[i])
+				ep+=e_p[i]*a_p[i]/(e_p[i]+p_p[i])
+				pp+=p_p[i]*a_p[i]/(e_p[i]+p_p[i])
 		if((ep>pp and p[0]=='e') or (ep<pp and p[0]=='p')):
 			pa+=1
 			print('pass', pa*100/(pa+fa))
 		else:
 			fa+=1
-			print('fail', ep, pp, fa*100/(pa+fa))
-print(pa*100/(pa+fa))
+			print('fail', fa*100/(pa+fa))
+print(pa*100/(pa+fa),a_p)
+#90.34640407947951 if input=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
